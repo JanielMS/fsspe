@@ -1,16 +1,23 @@
-{% load static %}
+{% extends "./base.html" %}
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block HeroHeader %}
+ <div id="header_content">
+        <h2 >Soluções Inteligentes Para Você</h1>
+        <h1>Bem-Vindo a Fábrica de Software do IFSertãoPE Campus Petrolina</h1>
+        <div id="header_btns">
+          <a href="#sobre" class="btn">
+            Explorar mais<span class="d-block"><i class="ri-arrow-down-line"></i></span>
+          </a>
+        
+        </div>
+      </div>
+{% endblock HeroHeader %}
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="{% static 'css/pages/pagina_inicial/index.css' %}">
-    <title>Fábrica de Software do IFSertãoPe Campus Petrolina</title>
-</head>
-<body>
-    <h1>Pagina Inicial</h1>
-</body>
-</html>
+{% block MainContent %}
+{% include "./partials/_sobre.html"%}
+{% include "./partials/_processos.html"%}
+{% comment %} {% include "./partials/_softwares.html"%}
+{% include "./partials/_acontecimentos.html"%}
+{% include "./partials/_contato.html"%} {% endcomment %}
+{% endblock MainContent %}
+
