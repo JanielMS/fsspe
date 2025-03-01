@@ -3,7 +3,9 @@ const navLinks = document.getElementById("nav_links");
 const links = document.querySelectorAll(".nav-link");
 const menuBtnIcon = document.querySelector("i");
 
-console.log(links)
+const nav = document.getElementById("nav");
+const sticky = nav.offsetTop + 500;
+
 menuBnt.addEventListener("click", (e) => {
     navLinks.classList.toggle("open");
 
@@ -21,3 +23,11 @@ links.forEach(link => {
     });
 }
 );
+
+window.addEventListener("scroll", (e) => {
+    if (window.scrollY > sticky) {
+      nav.classList.add("sticky");
+    } else {
+      nav.classList.remove("sticky");
+    }
+  });

@@ -1,52 +1,7 @@
-{% load static %}
+{% extends "./base.html" %}
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="{% static 'css/icons/remixicon.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/pages/pagina_inicial/index.css' %}">
-    <title>Fábrica de Software do IFSertãoPe Campus Petrolina</title>
-</head>
-<body>
-    <header id="home">
-      <nav>
-        <div id="nav_header">
-          <div id="nav_logo">
-            <a href="#" class="logo">FSSPE<span class="d-sm-inline d-none">: Fábrica de Software IFSertãoPe Campus Petrolina</span>.</a>
-          </div>
-          <div id="nav_menu_btn">
-            <span><i class="ri-menu-line"></i></span>
-          </div>
-        </div>
-        <ul id="nav_links">
-          <div>
-            <li><a href="#sobre" class="nav-link">Sobre</a></li>
-            <li><a href="#processos" class="nav-link">Processos</a></li>
-            <li><div class="dropdown">
-                  <button class="btn-link" type="button" id="dropdownNovo" data-bs-toggle="dropdown" aria-expanded="false">
-                      <span class="text">Softwares</span>
-                      <span><i class="ri-arrow-down-s-fill"></i></span>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownNovo">
-                      <li><a class="dropdown-item nav-link" href="#projetos-prontos">Projetos Prontos</a></li>
-                      <li><a class="dropdown-item nav-link" href="#projetos-andamento">Projetos Em Andamento</a></li>
-            
-                      <!-- Adicione mais itens conforme necessário -->
-                  </ul>
-              </div></li>
-            <li><a href="#acontecimentos" class="nav-link">Acontecimentos</a></li>
-          </div>
-          <li>
-            <a href="#contato" class="btn nav-link">Fale Conosco</a>
-          </li>
-        </ul>
-      </nav>
-      <div id="header_content">
+{% block HeroHeader %}
+ <div id="header_content">
         <h2 >Soluções Inteligentes Para Você</h1>
         <h1>Bem-Vindo a Fábrica de Software do IFSertãoPE Campus Petrolina</h1>
         <div id="header_btns">
@@ -56,9 +11,13 @@
         
         </div>
       </div>
-    </header>
-    <!-- JS -->
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'js/pages/main.js' %}"></script>
-</body>
-</html>
+{% endblock HeroHeader %}
+
+{% block MainContent %}
+{% include "./partials/_sobre.html"%}
+{% include "./partials/_processos.html"%}
+{% comment %} {% include "./partials/_softwares.html"%}
+{% include "./partials/_acontecimentos.html"%}
+{% include "./partials/_contato.html"%} {% endcomment %}
+{% endblock MainContent %}
+
