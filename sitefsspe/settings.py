@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # APPS DO PROJETO
     "pagina_inicial",
+
+    
 ]
 
 MIDDLEWARE = [
@@ -49,7 +51,9 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    
 ]
+
 
 ROOT_URLCONF = "sitefsspe.urls"
 
@@ -127,6 +131,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "global/static", 
 ]
 
+STATIC_ROOT = BASE_DIR / "staticfiles"
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 

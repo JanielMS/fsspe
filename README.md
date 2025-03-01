@@ -63,6 +63,9 @@ Certifique-se de que você tenha as seguintes ferramentas instaladas em seu ambi
 
    O projeto estará disponível em [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
+## Instruções de Configuração
+
+- [Configuração do Dart Sass](docs/sass/sass-setup.md)
 
 ## Como contribuir
 
