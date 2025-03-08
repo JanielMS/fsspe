@@ -17,7 +17,7 @@
       <nav id="nav">
         <div id="nav_header">
           <div id="nav_logo">
-            <a href="#" class="logo">FSSPE<span class="d-sm-inline d-none">: Fábrica de Software IFSertãoPe Campus Petrolina</span>.</a>
+            <a href="{% url 'pagina-inicial'%}" class="logo">FSSPE<span class="d-sm-inline d-none">: Fábrica de Software IFSertãoPe Campus Petrolina</span>.</a>
           </div>
           <div id="nav_menu_btn">
             <span><i class="ri-menu-line"></i></span>
@@ -43,7 +43,7 @@
             <li><a href="#contato" class="nav-link">Fale Conosco</a></li>
           </div>
           <li>
-            <a href="#" class="btn nav-link">Entrar</a>
+            <a href="#" class="btn btn-cta nav-link">Entrar</a>
           </li>
         </ul>
       </nav>
@@ -51,9 +51,9 @@
       
       {% endblock HeroHeader %}
     </header>
-    {% block MainContent %}
-    
-    {% endblock MainContent %}
+      {% block MainContent %}
+        <main></main>
+      {% endblock MainContent %}
     <!-- JS -->
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/pages/main.js' %}"></script>

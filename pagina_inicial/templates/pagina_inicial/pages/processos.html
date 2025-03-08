@@ -1,0 +1,259 @@
+{% extends "pagina_inicial/base.html" %}
+{% load static %}
+
+{% block HeroHeader %}
+ <div id="header_content">
+    <h2 >Processos</h1>
+    <h1>Conheça os processos da Fábrica de Software do IFSertãoPE</h1>
+    <div id="header_btns">
+      <a href="#processos" class="btn">
+        Explorar mais<span class="d-block"><i class="ri-arrow-down-line"></i></span>
+      </a>
+    
+    </div>
+  </div>
+{% endblock HeroHeader %}
+
+{% block MainContent %}
+<section class="section_container processos_container" id="processos">
+      <div id="processos_content">
+        <h3 class="section_subheader">Processos</h3>
+        
+        <div class="imgs-content">
+            <h3 class="text-center">Diagrama de processos</h3>
+            <img src="{% static 'assets/imgs/Processo_e_Sprint_FSSPE.png' %}" alt="">
+        </div>
+        
+        <p>O processo de software utilizado pela FSSPE está baseado em algumas atividades de processos ágeis, o eXtreme Programming (XP). São observadas na fábrica algumas boas práticas do XP. Para o XP é essencial que o cliente participe ativamente do desenvolvimento. O XP trabalha de forma iterativa e incremental gerando realeses como entrega no final de cada Sprint. Outra boa prática incorporada do XP é o Planning game, o jogo do planejamento onde o cliente é estimulado a relatar a funcionalidade, a equipe de desenvolvimento que registra a funcionalidade, estima o tempo e o custo, e o cliente prioriza para que a equipe possa definir as atividades que irão fazer parte de uma Sprint. Baseado no SCRUM, a equipe faz reuniões diárias, refactoring que é o processo de reorganizar o código fonte de um software para melhorar sua qualidade interna sem alterar seu comportamento externo.</p>
+        
+        <p>Os papéis a serem executados na Fábrica de Software são</p>
+
+        <ul class="list-content">
+            
+            <li><strong>Analista:</strong> que possui atividades de representar as considerações do stakeholder coletando os requisitos, compreendendo o problema e propondo uma solução.</li>
+            
+
+            <li><strong>O arquiteto:</strong> por sua vez é responsável por efetuar o design da arquitetura do software, incluindo tomar as decisões técnicas principais para a implementação geral do projeto, assim como a definição dos componentes que melhor se adaptam à ocasião e ao sistema a ser desenvolvido.</li>
+
+            <li><strong>Os desenvolvedores: </strong>efetuam a codificação do software em questão.</li>
+
+            <li><strong>Gerente de projeto:</strong> é de liderar o planejamento do projeto, juntamente com a equipe de desenvolvimento e os profissionais especialistas, coordenando as iterações entre estas partes, mantendo a equipe focada no objetivo do software.</li>
+
+            <strong>
+            <li>O designer: está focado na usabilidade do jogo, procura garantir que a solução elaborada está de acordo com a necessidade do cliente, para isso faz uso de protótipos.</li>
+            </strong>
+
+            <li><strong>O stakeholder:</strong> que faz o papel de testador, para garantir maior qualidade é o engenheiro de testes, ficando claro que esta atividade permeia todas as outras.</li>
+
+            <li><strong>O gerente de configuração:</strong> vai realizar o fechamento da Sprint para finalizar a release a ser liberada para nosso cliente.</li>
+        </ul>
+
+        <h3 class="section_subheader mt-5">Atividades do Processo</h3>
+
+        <div class="imgs-content">
+            <h3 class="text-center">Iniciação do Projeto</h3>
+            <img src="{% static 'assets/imgs/Iniciação do Projeto FSSPE.png' %}" alt="">
+        </div>
+
+        <p>A inicialização do projeto, aborda construção de documentos iniciais, atribuição de papéis e alocação da equipe para o projeto, planejamento das atividades, definição da estrutura de suporte e controle, perspectiva do produto e estabelecimento do Product Backlog.</p>
+
+        <ul class="list-content">
+            <li>Artefatos de Entrada: Documentos fornecidos pelo cliente, entrevistas, questionários.</li>
+            <li>Artefatos de saída: Product Backlog.</li>
+            <li>
+                Papéis Responsáveis: Product Owner, Gerente do Projeto, scrum team.        
+            </li>
+        </ul>
+        <div class="imgs-content">
+            <h3 class="text-center text-uppercase">Sprint</h3>
+            <img src="{% static 'assets/imgs/Sprint_FSSPE.png' %}" alt="">
+        </div>
+        <p>Sprint é um conjunto de atividades, dentro do processo de desenvolvimento, que concebe um novo produto ao final de cada iteração. As atividades de cada sprint são bem definidas e intercomunicáveis, ou seja, a qualquer momento uma atividade pode ser parada e a equipe voltar a uma atividade anterior para gerar um novo conjunto de informações para aquela atividade que vinha sendo desenvolvida. Toda sprint se baseia no Backlog da Sprint, gerado a partir do Backlog do Produto que nada mais é do que os objetivos a serem cumpridos do projeto.</p>
+        
+        <h4>PLANEJAMENTO DA SPRINT</h4>
+
+        <p>É o planejamento inicial da sprint onde se define o escopo da mesma.</p>
+
+        <ul class="list-content">
+            <li><strong>Artefatos de Entrada:</strong> Product Backlog.</li>
+            <li><strong>Artefatos de Saída:</strong>Backlog da Sprint.</li>
+            <li>
+                <strong>Papéis: </strong>Product Owner(PO), Gerente de Projeto e Scrum Team.
+                
+            </li>
+        </ul>
+        <h4 >ANÁLISE DO PROJETO</h4>
+           
+        <p>Refina os requisitos da sprint com base no Backlog da Sprint. Organiza as atividades a serem desenvolvidas durante a sprint e o escopo de desenvolvimento.</p>
+
+        <ul class="list-content">
+            <li><strong>Artefatos de Entrada:</strong> Backlog da Sprint.</li>
+            <li><strong>Artefatos de Saída:</strong>Protótipo e Plano de Testes.</li>
+            <li><strong>Papéis:</strong> Scrum Team.</li>
+        </ul>
+        <h4>CODIFICAÇÃO</h4>
+
+        <p>Desenvolvimento e implementação do código fonte. Integração de componentes e testes unitários.</p>
+
+        <ul class="list-content">
+            <li><strong>Artefatos de Entrada:</strong> Backlog da Sprint.</li>
+            <li><strong>Artefatos de Saída:</strong>Protótipo e Plano de Testes.</li>
+            <li><strong>Papéis:</strong> Scrum Team.</li>
+        </ul>
+        <h4>TESTES</h4>
+
+        <p>Executar a verificação dos componentes do sistema. Testar e avaliar o funcionamento dos incrementos e suas integrações.</p>
+        <ul class="list-content">
+            <li><strong>Artefatos de Entrada:</strong> Backlog da sprint, plano de testes.</li>
+            <li><strong>Artefatos de Saída:</strong> Resultado dos testes e Feedback do cliente.</li>
+            <li><strong>Papéis:</strong> Scrum Team.</li>
+        </ul>
+        <h4>REVISÃO DA SPRINT</h4>
+
+        <p>Etapa de avaliação da sprint e de tudo que foi feito durante a sprint.</p>
+
+        <ul class="list-content">
+            <li><strong>Artefatos de Entrada:</strong> Backlog da Sprint</li>
+            <li><strong>Artefatos de Saída:</strong> Lições aprendidas.</li>
+            <li><strong>Papéis:</strong> Scrum Team.</li>
+        </ul>
+        
+        <div class="imgs-content">
+            <h3 class="text-center text-uppercase">Gerência de Configuração</h3>
+            <img src="{% static 'assets/imgs/Gerencia_Configuracao_FSSPE.png' %}" alt="">
+        </div>
+        <p>Esta etapa é responsável por fornecer apoio a todo processo de desenvolvimento de software. É nela que se faz o controle de versão e o controle de mudanças para ambiente de desenvolvimento, ambiente de armazenamento, artefatos de software gerados ou consumidos, homologação de builds, entrega de releases, garantia de qualidade e testes.</p>
+
+        <h4>HOMOLOGAR BUILD</h4>
+
+        <p>Finalidade: Homologação da versão / release, junto a equipe e ao Product Owner.</p>
+
+        <ul class="list-content">
+            <li><strong>Artefatos de Entrada:</strong> Sprint Backlog realizado.</li>
+            <li><strong>Artefatos de Saída:</strong> Build e Releases.</li>
+            <li><strong>Papéis:</strong> Gerente de Projeto e Scrum Team..</li>
+        </ul>
+
+        
+        <h4>GERENCIAR AMBIENTE</h4>
+
+        <p>Finalidade: Acompanhamento das atividades realizadas no dia a dia da fábrica e controle de versões utilizando ferramenta para tal finalidade.</p>
+
+        <ul class="list-content">
+            <li><strong>Artefatos de Entrada:</strong> Solicitação da equipe.</li>
+            <li><strong>Artefatos de Saída:</strong> Plano de Gerência de Configuração utilizando o GIT.</li>
+            <li><strong>Papéis:</strong> Gerente de Projeto e Scrum Team..</li>
+        </ul>
+        
+        <div class="imgs-content">
+            <h3 class="text-center text-uppercase">Gerência de Mudanças</h3>
+            <img src="{% static 'assets/imgs/Gerencia_Mudanca_FSSPE.png' %}" alt="">
+        </div>
+
+        <p>Gerência de Mudanças ou Gestão de mudanças é uma área de estudo de melhores práticas em Engenharia de Software, no entanto, é uma área oriunda da administração que possui o enfoque na necessidade de constante adaptação motivada por eventos.O Gerenciamento de Mudança é responsável pelo gerenciamento dos processos de Mudança envolvendo:</p>
+
+            <ul class="list-content">
+                <li>Hardware;</li>
+                <li>Equipamento de Comunicações e software;</li>
+                <li>Sistema de software;</li>
+                <li>Aplicações de software ativas;</li>
+                <li>Toda a documentação e procedimentos associados com a execução, o suporte e manutenção dos sistemas ativos.</li>
+            </ul>
+
+        <h4>REGISTRAR SOLICITAÇÃO DE MUDANÇAS</h4>
+
+        <p>Finalidade: Registrar solicitação de mudanças para análise junto a equipe e ao Product Owner.</p>
+
+        <ul class="list-content">
+            <li><strong>Artefatos de Entrada:</strong> Solicitação de mudança.</li>
+            <li><strong>Artefatos de Saída:</strong> Funcionalidade do Product Backlog afetada.</li>
+            <li><strong>Papéis:</strong> Gerente de Projeto e Scrum Team.</li>
+        </ul>
+
+        <h4>VALIDAR SOLICITAÇÃO DE MUDANÇA</h4>
+
+        <p>Finalidade: Valida a solicitação de mudança junto ao cliente de acordo com o impacto no projeto.</p>
+
+        <ul class="list-content">
+            <li><strong>Artefatos de Entrada:</strong> Solicitação de mudança.</li>
+            <li><strong>Artefatos de Saída:</strong> Lista de requisitos afetados.</li>
+            <li><strong>Papéis:</strong> Gerente de Projeto e Scrum Team.</li>
+        </ul>
+
+        <h4>RASTREAR RELACIONAMENTOS E DEPENDÊNCIAS</h4>
+
+        <p>Finalidade: Rastrear os relacionamentos e dependências do novo requisito.</p>
+
+        <ul class="list-content">
+            <li><strong>Artefatos de Entrada:</strong> Lista de requisitos e artefatos.</li>
+            <li><strong>Artefatos de Saída:</strong> Itens do product backlog afetados.</li>
+            <li><strong>Papéis:</strong> Gerente de Projeto e Scrum Team.</li>
+        </ul>
+
+        <h4>AVALIAR CUSTO DA MUDANÇA</h4>
+
+        <p>Finalidade: Avaliação da estimativa necessária para solicitação de mudança.</p>
+
+        <ul class="list-content">
+            <li><strong>Artefatos de Entrada:</strong> Solicitação de mudança.</li>
+            <li><strong>Artefatos de Saída:</strong> Estimativa homem/Hora.</li>
+            <li><strong>Papéis:</strong> Gerente de Projeto e Scrum Team.</li>
+        </ul>
+
+        <h4>ATUALIZAR ARTEFATOS</h4>
+
+        <p>Finalidade: Atualização dos artefatos do projeto.</p>
+
+        <ul class="list-content">
+            <li><strong>Artefatos de Entrada:</strong> Solicitação de mudança.</li>
+            <li><strong>Artefatos de Saída:</strong> Product backlog alterado.</li>
+            <li><strong>Papéis:</strong> Gerente de Projeto e Scrum Team.</li>
+        </ul>
+
+        <h4>ABORTAR MUDANÇAS</h4>
+
+        <p>Finalidade: Abortar Mudança, não é pertinente para o projeto.</p>
+
+        <ul class="list-content">
+            <li><strong>Artefatos de Entrada:</strong> Solicitação de mudança.</li>
+            <li><strong>Artefatos de Saída:</strong> ---</li>
+            <li><strong>Papéis:</strong> Gerente de Projeto e Scrum Team.</li>
+        </ul>
+        
+        <div class="imgs-content">
+            <h3 class="text-center text-uppercase">Gerência de Requisitos</h3>
+            <img src="{% static 'assets/imgs/Gerencia de Requisitos_FSSPE.png' %}" alt="">
+        </div>
+        <p>A gerência de requisitos acontece no product backlog que é o ponto inicial do Scrum, sendo considerada a prática responsável pela coleta dos requisitos, nesta prática, através de reuniões com todos stakeholders no projeto, são apontados os itens com todas as necessidades do negócio e os requisitos técnicos a serem desenvolvidos. O product backlog é uma lista de atividades que provavelmente serão desenvolvidas durante o projeto. A gerencia de requisitos está atenta nas reuniões realizadas com os stakeholders para identificar outras atividades a serem desenvolvidas no projeto as quais serão validadas com o cliente e priorizadas de acordo com sua necessidade. A figura acima representa o processo de gerencia de requisitos.</p>
+        
+        <div class="imgs-content">
+            <h3 class="text-center text-uppercase">Acompanhamento do Projeto</h3>
+            <img src="{% static 'assets/imgs/Acompanhamento_Projeto FSSPE.png' %}" alt="">
+        </div>
+        <p>É nesta etapa que é feito o acompanhamento das atividades desenvolvidas ao longo do projeto. É feito através de reuniões diárias (Scrum Team) e periódicas (Gerente do Projeto e Product Owner), análise da evolução da construção do projeto, que visam garantir que o escopo estabelecido seja cumprido de acordo com as expectativas previstas no planejamento. Busca detectar impedimentos e solucioná-los.</p>
+        <h4>ACOMPANHAMENTO DO PROJETO</h4>
+
+        <p>Finalidade: Acompanhamento das atividades desenvolvidas ao longo do projeto.</p>
+
+        <ul class="list-content">
+            <li><strong>Artefatos de Entrada:</strong> Product Backlog.</li>
+            <li><strong>Artefatos de Saída:</strong> Product Backlog e Gráfico Burndown.</li>
+            <li><strong>Papéis:</strong> Gerente de Projeto e Scrum Team.</li>
+        </ul>
+        
+        <div class="imgs-content">
+            <h3 class="text-center text-uppercase">Entrega</h3>
+            <img src="{% static 'assets/imgs/Entrega FSSPE.png' %}" alt="">
+        </div>
+        <p>Neste caso é a entrega formal do produto, contendo a conclusão do projeto e fechamento formal de itens do Product Backlog, registro das lições aprendidas do projeto, métricas gerados pelo projeto e avaliação da satisfação do cliente.</p>
+        <ul class="list-content">
+            <li><strong>Artefatos de Entrada:</strong> Product Backlog.</li>
+            <li><strong>Artefatos de Saída:</strong> Burn Down – Valor de negócio.</li>
+            <li><strong>Papéis:</strong> Product Owner e Gerente de Projeto.</li>
+        </ul>
+    
+      </div>
+      
+      
+</section>
+{% endblock MainContent %}

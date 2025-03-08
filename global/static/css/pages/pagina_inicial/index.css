@@ -21,6 +21,16 @@
   width: fit-content;
   border-bottom: 4px solid #ff3131;
 }
+.section_container .imgs-content {
+  width: 70%;
+  margin: auto;
+}
+.section_container ul.list-content {
+  color: #79828f;
+}
+.section_container ul.list-content li {
+  margin-bottom: 0.8rem;
+}
 
 .dropdown-menu {
   padding: 1rem;
@@ -171,6 +181,7 @@ nav.sticky {
 #header_content {
   padding-block: 7rem 2rem;
   padding-inline: 1rem;
+  height: 85vh;
 }
 #header_content::before {
   position: absolute;
@@ -307,11 +318,15 @@ nav.sticky {
   #nav_links a:hover, #nav_links .btn-link:hover {
     color: #6dde34;
   }
+  #nav_links a.btn-cta, #nav_links .btn-link.btn-cta {
+    color: #000000;
+  }
   #header_content {
     padding-block: 8rem 5rem;
     margin-top: 9rem;
     margin-bottom: 8rem;
     align-items: center;
+    height: 55vh;
   }
   #header_content::before {
     grid-area: 1/1/2/3;
@@ -389,9 +404,15 @@ nav.sticky {
 }
 
 #processos_content p {
-  padding-block: 2rem 2rem;
+  padding-block: 1rem 1rem;
   color: #79828f;
   text-align: justify;
+}
+#processos_content h4 {
+  margin-top: 2rem;
+}
+#processos_content ul {
+  margin-top: -0.5rem;
 }
 
 #processos_grid {
@@ -431,6 +452,17 @@ nav.sticky {
 @media (min-width: 500px) {
   #processos_grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .processos_card {
+    padding: 1.5rem;
+  }
+  .processos_card a.btn {
+    margin-top: 1rem;
+  }
+  .processos_card p {
+    height: 150px; /* Impede que o texto quebre em várias linhas */
+    overflow: hidden; /* Oculta o texto que ultrapassa a largura */
+    text-overflow: ellipsis; /* Adiciona reticências no final do texto */
   }
 }
 @media (min-width: 1024px) {

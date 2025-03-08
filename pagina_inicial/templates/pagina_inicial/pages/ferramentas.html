@@ -1,0 +1,44 @@
+{% extends "pagina_inicial/base.html" %}
+{% load static %}
+
+{% block HeroHeader %}
+ <div id="header_content">
+    <h2 >Ferramentas</h1>
+    <h1>Conheça as ferramentas da Fábrica de Software do IFSertãoPE</h1>
+    <div id="header_btns">
+      <a href="#processos-ferramentas" class="btn">
+        Explorar mais<span class="d-block"><i class="ri-arrow-down-line"></i></span>
+      </a>
+    
+    </div>
+  </div>
+{% endblock HeroHeader %}
+
+{% block MainContent %}
+<section class="section_container processos_container" id="processos-ferramentas">
+      <div id="processos_content">
+        <h3 class="section_subheader">Ferramentas</h3>
+        
+    
+        <p>Aqui estão as ferramentas utilizadas no processo de criação dos projetos da Fábrica de Software do Sertão Pernambucano.</p>
+        
+
+        <ul class="list-content">
+            <li>
+            <strong>BIZAGI MODELER PROCESS:</strong> Criação de fluxogramas e diagramas e geral, permitindo organizar o processo.
+            </li>
+            <li><strong>TRELLO:</strong> É uma plataforma de gestão de projetos e/ou tarefas com diversos recursos que facilitam a interação dos participantes e aumentam a produtividade do trabalho em equipe.</li>
+            <li><strong>GIT:</strong> Sistema de controle de versão de arquivos. Através deles podemos desenvolver projetos na qual diversas pessoas podem contribuir simultaneamente no mesmo, editando e criando novos arquivos e permitindo que os mesmos possam existir sem o risco de suas alterações serem sobrescritas.</li>
+            <li><strong>DJANGO:</strong> É um framework web de alto nível escrito em Python que incentiva o desenvolvimento rápido e o design limpo e pragmático.</li>
+            <li><strong>VISUAL STUDIO CODE (VSCode):</strong> É um editor de código-fonte desenvolvido pela Microsoft para Windows, Linux e macOS, com suporte para depuração, controle de versionamento Git incorporado, realce de sintaxe, complementação inteligente de código, snippets e refatoração de código.</li>
+            <li><strong>LARAVEL:</strong> É um Framework PHP utilizado para o desenvolvimento web, que utiliza a arquitetura MVC e tem como principal característica ajudar a desenvolver aplicações seguras e performáticas de forma rápida, com código limpo e simples, já que ele incentiva o uso de boas práticas de programação e utiliza o padrão PSR-2 como guia para estilo de escrita do código.</li>
+            <li><strong>APACHE:</strong> Servidor web desenvolvido pelo Apache Group de código fonte disponível gratuitamente via Internet. http://www.apache.org/.</li>
+            <li><strong>SUBLIME:</strong> É um editor de código-fonte multiplataforma, escrito em linguagem C++. Inicialmente, o programa foi pensado para ser uma extensão do Vim.</li>
+            
+        </ul>
+    
+      </div>
+      
+      
+</section>
+{% endblock MainContent %}
