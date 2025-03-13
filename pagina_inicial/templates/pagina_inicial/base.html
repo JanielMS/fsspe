@@ -17,7 +17,7 @@
       <nav id="nav">
         <div id="nav_header">
           <div id="nav_logo">
-            <a href="#" class="logo">FSSPE<span class="d-sm-inline d-none">: Fábrica de Software IFSertãoPe Campus Petrolina</span>.</a>
+            <a href="{% url 'pagina-inicial'%}" class="logo">FSSPE<span class="d-sm-inline d-none">: Fábrica de Software IFSertãoPe Campus Petrolina</span>.</a>
           </div>
           <div id="nav_menu_btn">
             <span><i class="ri-menu-line"></i></span>
@@ -25,6 +25,58 @@
         </div>
         <ul id="nav_links">
           <div>
+            <li><a href="#sobre" class="nav-link">Sobre</a></li>
+            <li><a href="#processos" class="nav-link">Processos</a></li>
+            <li><div class="dropdown">
+                  <button class="btn-link" type="button" id="dropdownNovo" data-bs-toggle="dropdown" aria-expanded="false">
+                      <span class="text">Softwares</span>
+                      <span><i class="ri-arrow-down-s-fill"></i></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownNovo">
+                      <li><a class="dropdown-item nav-link" href="#softwares-prontos">Projetos Prontos</a></li>
+                      <li><a class="dropdown-item nav-link" href="#softwares-andamento">Projetos Em Andamento</a></li>
+            
+                      <!-- Adicione mais itens conforme necessário -->
+                  </ul>
+              </div></li>
+            <li><a href="#acontecimentos" class="nav-link">Acontecimentos</a></li>
+            <li><a href="#contato" class="nav-link">Fale Conosco</a></li>
+          </div>
+          <li>
+            <a href="#" class="btn btn-cta nav-link">Entrar</a>
+          </li>
+        </ul>
+      </nav>
+      {% block HeroHeader %}
+      
+      {% endblock HeroHeader %}
+    </header>
+      {% block MainContent %}
+        <main></main>
+      {% endblock MainContent %}
+    <footer id="news">
+      <div class="section_container footer_container">
+        <div class="footer_col">
+          <div id="footer_logo">
+            <a href="#" class="logo">FSSPE</a>
+          </div>
+          <ul class="footer_links">
+            <li>
+              <a href="#">
+                <span><i class="ri-phone-line"></i></span> (87) 2101-4300
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span><i class="ri-map-pin-line"></i></span>Rua Maria Luzia de Araújo Gomes Cabral, 791 – João de Deus – Petrolina/PE – CEP: 56316-686
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+        <div class="footer_col">
+          <h4>Menu</h4>
+          <ul class="footer_links">
             <li><a href="#sobre" class="nav-link">Sobre</a></li>
             <li><a href="#processos" class="nav-link">Processos</a></li>
             <li><div class="dropdown">
@@ -41,19 +93,20 @@
               </div></li>
             <li><a href="#acontecimentos" class="nav-link">Acontecimentos</a></li>
             <li><a href="#contato" class="nav-link">Fale Conosco</a></li>
-          </div>
-          <li>
-            <a href="#" class="btn nav-link">Entrar</a>
-          </li>
-        </ul>
-      </nav>
-      {% block HeroHeader %}
-      
-      {% endblock HeroHeader %}
-    </header>
-    {% block MainContent %}
-    
-    {% endblock MainContent %}
+          </ul>
+        </div>
+        <div class="footer_col" id="contato">
+          <h2>Fale Conosco</h2>
+          <p>Entre em contato para opinar, sugerir, criticar ou elogiar!</p>
+          <form action="/">
+            <button class="btn">Entrar em contato</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer_bar">
+        Copyright © 2025 FSSPE. Todos os direitos reservados.
+      </div>
+    </footer>
     <!-- JS -->
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/pages/main.js' %}"></script>
