@@ -59,7 +59,10 @@ ROOT_URLCONF = "sitefsspe.urls"
 
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
-LOGOUT_REDIRECT_URL = "/"
+HANDLER403 = 'sitefsspe.views.custom_403'
+
+LOGIN_REDIRECT_URL = '/home'
+LOGOUT_REDIRECT_URL = "/login/"
 
 TEMPLATES = [
     {

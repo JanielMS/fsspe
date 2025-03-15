@@ -3,7 +3,7 @@ from .views import *
 app_name = "usuarios"
 
 urlpatterns = [
-    path("login/", UserLoginView.as_view(), name="login"),
+    path("", UserLoginView.as_view(), name="login"),
     path("cadastro/", UserRegisterView.as_view(), name="registrar"),
     path("logout/", UserLogoutView.as_view(), name="logout"),
 

@@ -26,7 +26,7 @@ def create_default_admin(sender, **kwargs):
     Cria um usuário admin padrão ao iniciar o sistema, caso ele ainda não exista.
     """
     if not User.objects.filter(username="admin").exists():
-        admin_user = User.objects.create_superuser(username="superadmin", email="admin@sgpa.com", password="admin123")
+        admin_user = User.objects.create_superuser(username="admin", email="admin@sgpa.com", password="admin123")
         admin_group, _ = Group.objects.get_or_create(name="Admin")
         admin_user.groups.add(admin_group)
-        print("Usuário admin criado: superadmin / admin123")
+        print("Usuário admin criado: admin / admin123")
