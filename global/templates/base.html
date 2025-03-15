@@ -32,10 +32,16 @@
             <!-- Menu Lista -->
             <nav class="menu">
                 <div>
-                    <a href="#" class="menu-item {% if request.path == '/' %}active{% endif %}" title="Inicio">
+                    <a href="{% url 'home'%}" class="menu-item {% if request.path == '/' %}active{% endif %}" title="Inicio">
                         <span class="icon"><i class="ri-home-5-line"></i></span>
                         <span class="text">Inicio</span>
                     </a>
+                    {% if request.user.groups.all.0.name == "Admin" %}
+                    <a href="{% url 'usuarios:lista-usuarios'%}" class="menu-item {% if request.path == '/perfil/' %}active{% endif %}" title="Perfil">
+                        <span class="icon"><i class="ri-group-line"></i></span>
+                        <span class="text">Gerenciar Usuários</span>
+                    </a>
+                    {% endif %}
                     <a href="{% url 'usuarios:perfil'%}" class="menu-item {% if request.path == '/perfil/' %}active{% endif %}" title="Perfil">
                         <span class="icon"><i class="ri-user-line"></i></span>
                         <span class="text">Perfil</span>

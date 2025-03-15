@@ -36,13 +36,4 @@
 </form>
 </div>
 
-
-<div class="form-footer">
-
-    {% if request.user.groups.all.0.name == "Admin" %}
-        <a href="{% url 'usuarios:lista-usuarios' %}">
-            <button class="btn btn-secondary">Gerenciar Usuários</button>
-        </a>
-</div>
-{% endif %}
 {% endblock %}

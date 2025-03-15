@@ -1,6 +1,6 @@
 {% extends "./index.html" %}
 {% block titleArea %}
-Registrar
+Cadastrar Novo Usuário
 {% endblock titleArea %}
 
 {% block authArea %}
@@ -21,6 +21,6 @@ Registrar
     {% endfor %}
     <button type="submit">Registrar</button>
 </form>
-<p>Já tem uma conta? <a href="{% url 'usuarios:login' %}">Entrar</a></p>
+<p>Cancelar? <a href="{% url 'home' %}">Voltar ao inicio</a></p>
 
 {% endblock authArea %}

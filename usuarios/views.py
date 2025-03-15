@@ -1,5 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.views.generic import FormView, CreateView, RedirectView, UpdateView, DeleteView, ListView
+from django.views.generic import FormView, CreateView, RedirectView, UpdateView, DeleteView, ListView, TemplateView
 from django.contrib.auth import login, logout
 from django.contrib.auth.views import LoginView
 from django.shortcuts import redirect, get_object_or_404
@@ -104,7 +104,7 @@ class UserRegisterView(CreateView):
     """
     template_name = "registration/register.html"
     form_class = CustomUserCreationForm
-    success_url = reverse_lazy("usuarios:login")
+    success_url = reverse_lazy("usuarios:perfil")
 
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -112,6 +112,15 @@ class UserRegisterView(CreateView):
         login(self.request, user)
         return response
 
+class AdminRegisterUserView(LoginRequiredMixin, IsAdminMixin, UserRegisterView):
+    """
+    View para cadastro de novos usuários pelo admin.
+    """
+    template_name = 'usuarios/admin_registrar_usuario.html'
+    success_url = reverse_lazy("usuarios:lista-usuarios")
+    def form_valid(self, form):
+        form.save()
+        return redirect(self.success_url)
 class UserLoginView(LoginView):
     """
     View para login de usuários.
