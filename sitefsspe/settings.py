@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # APPS DO PROJETO
     "pagina_inicial",
-
+    "usuarios"
     
 ]
 
@@ -59,7 +59,10 @@ ROOT_URLCONF = "sitefsspe.urls"
 
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
-LOGOUT_REDIRECT_URL = "/"
+HANDLER403 = 'sitefsspe.views.custom_403'
+
+LOGIN_REDIRECT_URL = '/home'
+LOGOUT_REDIRECT_URL = "/login/"
 
 TEMPLATES = [
     {
