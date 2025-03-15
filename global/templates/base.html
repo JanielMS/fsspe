@@ -36,13 +36,20 @@
                         <span class="icon"><i class="ri-home-5-line"></i></span>
                         <span class="text">Inicio</span>
                     </a>
+
+                    <a href="{% url 'projetos:lista-projetos'%}" class="menu-item {% if request.path == '/sgpa/projetos/' %}active{% endif %}" title="Perfil">
+                        <span class="icon"><i class="ri-user-line"></i></span>
+                        <span class="text">Projetos</span>
+                    </a>
+
                     {% if request.user.groups.all.0.name == "Admin" %}
-                    <a href="{% url 'usuarios:lista-usuarios'%}" class="menu-item {% if request.path == '/perfil/' %}active{% endif %}" title="Perfil">
+                    <a href="{% url 'usuarios:lista-usuarios'%}" class="menu-item {% if request.path == '/sgpa/listar-usuarios' %}active{% endif %}" title="Perfil">
                         <span class="icon"><i class="ri-group-line"></i></span>
                         <span class="text">Gerenciar Usuários</span>
                     </a>
                     {% endif %}
-                    <a href="{% url 'usuarios:perfil'%}" class="menu-item {% if request.path == '/perfil/' %}active{% endif %}" title="Perfil">
+                    
+                    <a href="{% url 'usuarios:perfil'%}" class="menu-item {% if request.path == '/sgpa/perfil' %}active{% endif %}" title="Perfil">
                         <span class="icon"><i class="ri-user-line"></i></span>
                         <span class="text">Perfil</span>
                     </a>

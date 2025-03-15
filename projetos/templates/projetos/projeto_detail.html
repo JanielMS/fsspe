@@ -1,0 +1,43 @@
+{% extends "./base_app.html" %}
+
+{% block AppContent %}
+<div class="project-detail-container">
+    <div class="project-header">
+        <h1 class="project-title">{{ projeto.nome }}</h1>
+        <div>
+            <span class="project-status status_{{ projeto.status_projeto|lower }}">{{ projeto.get_status_projeto_display }}</span>
+            <span class="project-status status_{{ projeto.status_implantacao|lower }}">{{ projeto.get_status_implantacao_display }}</span>
+            <span class="project-status status_{{ projeto.status_registro|lower }}">{{ projeto.get_status_registro_display }}</span>
+        </div>
+    </div>
+    <div class="projeto-imagem">
+        {% if projeto.imagem %}
+        <span><img src="{{ projeto.imagem.url }}" alt="{{ projeto.nome }}"></span>
+        {% else %}
+            <p>Sem imagem para este projeto.</p>
+        {% endif %}
+    </div>
+
+    <div class="project-info">
+        <div class="project-row">
+            <strong>Cliente:</strong> {{ projeto.cliente }}
+        </div>
+        <div class="project-row">
+            <strong>Data de Início:</strong> {{ projeto.data_inicio }}
+        </div>
+        <div class="project-row">
+            <strong>Equipe:</strong> {{ projeto.equipe }}
+        </div>
+        <div class="project-row">
+            <strong>Descrição:</strong>
+            <p>{{ projeto.descricao }}</p>
+        </div>
+    </div>
+
+    <div class="project-actions">
+        <a href="{% url 'projetos:editar-projeto' projeto.id %}" class="btn btn-success">Editar</a>
+        <a href="{% url 'projetos:excluir-projeto' projeto.id %}" class="btn btn-danger">Deletar</a>
+        <a href="{% url 'projetos:lista-projetos' %}" class="btn btn-secondary">Voltar</a>
+    </div>
+</div>
+{% endblock AppContent %}

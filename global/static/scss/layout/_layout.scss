@@ -6,7 +6,7 @@ body {
 }
 
 form, .form-body {
-    width: 100%;
+    
     .helptext {
         font-size: 12px;
         color: #666;
@@ -26,7 +26,6 @@ ul.errorlist {
     list-style: none;
     margin-bottom: 10px;
 }
-
 
 h1 {
     font-size: 2rem;
@@ -184,6 +183,128 @@ select {
     &:hover {
         border-color: darken($primary-color, 10%);
         background-color: #f9f9f9;
+    }
+}
+
+
+.project-detail-container {
+    padding: 2rem;
+
+    .projeto-imagem{
+        width: 100%;
+        margin-bottom: 2rem;
+
+        span{
+            img{
+                width: 100%;
+            max-height: 300px;
+
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f1f1f1;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.project-status {
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+
+.status_finalizado {
+    background-color: #28a745;
+    color: white;
+}
+
+.status_em_andamento {
+    background-color: #ffc107;
+    color: black;
+}
+
+.status_nao_finalizado {
+    background-color: #dc3545;
+    color: white;
+}
+
+.status_implantado {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.project-info {
+    margin-bottom: 2rem;
+}
+
+.project-row {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    color: #555;
+}
+
+
+.project-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+/* Estilos para cada tipo de status */
+.status-finalizado {
+    background-color: #28a745; /* Verde */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.status-em-andamento {
+    background-color: #ffc107; /* Amarelo */
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.status-nao-finalizado {
+    background-color: #dc3545; /* Vermelho */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.status-implementado {
+    background-color: #17a2b8; /* Azul */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .project-detail-container {
+        padding: 1rem;
+    }
+
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project-status {
+        margin-top: 0.5rem;
+    }
+
+    .project-actions {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }
 
