@@ -1,3 +1,11 @@
+:root {
+  --font-header: "Bebas Neue", serif;
+  --error-color: #d8000c;
+  --error-bg: #ffdddd;
+  --border-light: #ccc;
+  --text-light: #666;
+}
+
 .btn {
   border-radius: 0.5rem;
 }
@@ -49,12 +57,11 @@
 .form-body input, .form-body textarea, .form-body select {
   background-color: transparent;
   border: 1px solid #515252;
+  width: 100%;
   border-radius: 8px;
   padding: 0.5rem 1rem;
   color: #27303f;
   font-size: 1rem;
-  width: 100%;
-  box-sizing: border-box;
   transition: all 0.3s ease-in-out;
 }
 .form-body input:focus, .form-body textarea:focus, .form-body select:focus {
@@ -75,13 +82,61 @@
   opacity: 0.6;
 }
 .form-body textarea {
-  height: 60px;
+  height: 190px;
 }
-.form-body input[type=date]::-webkit-calendar-picker-indicator {
-  background-color: #6dde34;
-  border-radius: 50%;
-  padding: 5px;
+.form-body p {
+  text-align: left;
+  margin-bottom: 12px;
+}
+.form-body label {
+  font-weight: 600;
+  text-align: left;
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+.form-body form .helptext {
+  font-size: 12px;
+  color: var(--text-light);
+  display: block;
+  margin-top: 5px;
+}
+.form-body form ul {
+  padding-left: 18px;
+  margin: 5px 0 0;
+  list-style: square;
+  text-align: left;
+}
+.form-body form ul li {
+  font-size: 14px;
+  color: var(--text-light);
+}
+.form-body form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 1.5rem;
+  background: #6dde34;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
   cursor: pointer;
+  transition: background 0.3s;
+  font-weight: 600;
+}
+.form-body form button:hover {
+  background: rgb(85.0423728814, 191.8177966102, 31.1822033898);
+}
+.form-body form ul.errorlist {
+  background: var(--error-bg);
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
+  padding: 10px;
+  border-radius: 6px;
+  text-align: left;
+  font-size: 14px;
+  list-style: none;
+  margin-bottom: 10px;
 }
 
 .form-footer {
@@ -124,6 +179,9 @@
 
 table tr {
   height: 58px;
+}
+table tr td span {
+  max-width: max-content;
 }
 table tr td span.more-action:last-child {
   display: inline-block;
@@ -181,9 +239,6 @@ body {
   overflow-x: hidden;
 }
 
-form, .form-body {
-  width: 100%;
-}
 form .helptext, .form-body .helptext {
   font-size: 12px;
   color: #666;
@@ -342,6 +397,116 @@ select:hover {
   background-color: #f9f9f9;
 }
 
+.project-detail-container {
+  padding: 2rem;
+}
+.project-detail-container .projeto-imagem {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.project-detail-container .projeto-imagem span img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f1f1f1;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project-status {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+
+.status_finalizado {
+  background-color: #28a745;
+  color: white;
+}
+
+.status_em_andamento {
+  background-color: #ffc107;
+  color: black;
+}
+
+.status_nao_finalizado {
+  background-color: #dc3545;
+  color: white;
+}
+
+.status_implantado {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.project-info {
+  margin-bottom: 2rem;
+}
+
+.project-row {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: #555;
+}
+
+.project-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+/* Estilos para cada tipo de status */
+.status-finalizado {
+  background-color: #28a745; /* Verde */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.status-em-andamento {
+  background-color: #ffc107; /* Amarelo */
+  color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.status-nao-finalizado {
+  background-color: #dc3545; /* Vermelho */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.status-implementado {
+  background-color: #17a2b8; /* Azul */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .project-detail-container {
+    padding: 1rem;
+  }
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .project-status {
+    margin-top: 0.5rem;
+  }
+  .project-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
 @media (max-width: 768px) {
   .sidebar {
     width: 100vw;

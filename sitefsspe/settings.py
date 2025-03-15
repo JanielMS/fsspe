@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # APPS DO PROJETO
     "pagina_inicial",
-    "usuarios"
+    "usuarios",
+    "projetos",
     
 ]
 
@@ -61,7 +62,7 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 HANDLER403 = 'sitefsspe.views.custom_403'
 
-LOGIN_REDIRECT_URL = '/home'
+LOGIN_REDIRECT_URL = '/sgpa/home'
 LOGOUT_REDIRECT_URL = "/login/"
 
 TEMPLATES = [
@@ -133,6 +134,9 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [
     BASE_DIR / "global/static", 
 ]
+
+MEDIA_URL = "media/"
+MEDIA_ROOT = BASE_DIR / "media"
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 # Default primary key field type

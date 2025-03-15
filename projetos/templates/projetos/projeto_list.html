@@ -1,0 +1,55 @@
+{% extends "./base_app.html" %}
+{% block AppContent %}
+    {% if projetos %}
+    <table class="table table-responsive table-hover">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Data de Inicio</th>
+                <th>Cliente</th>
+                <th>Status do Projeto</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for projeto in projetos %}
+                <tr>
+                    <td>{{ projeto.nome_abreviado }}</td>
+                    <td>{{ projeto.data_inicio }}</td>
+                    <td>{{ projeto.cliente }}</td>
+                    <td>
+                        <span  class="d-block {% if projeto.status_projeto == 'finalizado' %}status-finalizado{% elif projeto.status_projeto == 'em_andamento' %}status-em-andamento{% elif projeto.status_projeto == 'nao_finalizado' %}status-nao-finalizado{% elif projeto.status_projeto == 'implementado' %}status-implementado{% endif %}">{{ projeto.get_status_projeto_display }}</span>
+                    </td>
+                    <td>
+                        <div class="actions">
+                            <a href="{% url 'projetos:ver-projeto' projeto.pk %}" class="btn btn-warning">Ver</a>
+                            <a href="{% url 'projetos:editar-projeto' projeto.pk %}" class="btn btn-success"> Editar</a>
+                            <a href="{% url 'projetos:excluir-projeto' projeto.pk %}" class="btn btn-danger"> Excluir</a>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>Nenhum Projeto Cadastrado!</p>
+    {% endif %}
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if projetos.has_previous %}
+                    <a href="?page=1">&laquo; primeira</a>
+                    <a href="?page={{ projetos.previous_page_number }}">anterior</a>
+                {% endif %}
+                <span class="current">
+                    Página {{ projetos.number }} de {{ projetos.paginator.num_pages }}.
+                </span>
+                {% if projetos.has_next %}
+                    <a href="?page={{ projetos.next_page_number }}">próxima</a>
+                    <a href="?page={{ projetos.paginator.num_pages }}">última &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+{% endblock %}
+
