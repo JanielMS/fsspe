@@ -25,22 +25,22 @@
         </div>
         <ul id="nav_links">
           <div>
-            <li><a href="#sobre" class="nav-link">Sobre</a></li>
-            <li><a href="#processos" class="nav-link">Processos</a></li>
+            <li><a href="{% url 'pagina-inicial'%}#sobre" class="nav-link">Sobre</a></li>
+            <li><a href="{% url 'pagina-inicial'%}#processos" class="nav-link">Processos</a></li>
             <li><div class="dropdown">
                   <button class="btn-link" type="button" id="dropdownNovo" data-bs-toggle="dropdown" aria-expanded="false">
                       <span class="text">Softwares</span>
                       <span><i class="ri-arrow-down-s-fill"></i></span>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownNovo">
-                      <li><a class="dropdown-item nav-link" href="#softwares-prontos">Projetos Prontos</a></li>
-                      <li><a class="dropdown-item nav-link" href="#softwares-andamento">Projetos Em Andamento</a></li>
+                      <li><a class="dropdown-item nav-link" href="{% url 'pagina-inicial'%}#softwares-prontos">Projetos Prontos</a></li>
+                      <li><a class="dropdown-item nav-link" href="{% url 'softwares'%}#software-andamento">Projetos Em Andamento</a></li>
             
                       <!-- Adicione mais itens conforme necessário -->
                   </ul>
               </div></li>
-            <li><a href="#acontecimentos" class="nav-link">Acontecimentos</a></li>
-            <li><a href="#contato" class="nav-link">Fale Conosco</a></li>
+            <li><a href="{% url 'pagina-inicial'%}#acontecimentos" class="nav-link">Acontecimentos</a></li>
+            <li><a href="{% url 'pagina-inicial'%}#contato" class="nav-link">Fale Conosco</a></li>
           </div>
           <li>
             <a href="{% url 'usuarios:login'%}" class="btn btn-cta nav-link">Entrar</a>

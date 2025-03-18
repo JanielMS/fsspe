@@ -24,7 +24,8 @@
                     <span class="text">Novo</span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownNovo">
-                    <li><a class="dropdown-item" href="#">Projetos</a></li>
+                    <li><a class="dropdown-item" href="{% url 'projetos:criar-projeto'%}">Projeto</a></li>
+                    <li><a class="dropdown-item" href="{% url 'acontecimentos:criar-acontecimento'%}">Aconteciemento</a></li>
                     {% comment %} <li><a class="dropdown-item " href="#"><i class="ri-arrow-right-up-long-line"></i> Acontecimentos</a></li> {% endcomment %}
                     <!-- Adicione mais itens conforme necessário -->
                 </ul>

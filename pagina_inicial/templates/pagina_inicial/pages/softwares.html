@@ -18,16 +18,16 @@
 {% load static %}
 
 <section class="section_container softwares_container" id="softwares">
-      <div id="softwares_content">
+      <div class="softwares_content">
         <h3 class="section_subheader">SOFTWARES</h3>
         <h2 class="section_header">A Fábrica de software apoiou atividades para vários alunos...</h2>
         
       </div>
-      <div id="softwares_content">
+      <div class="softwares_content" id="software-finalizados">
         <h3 class="section_subheader">FINALIZADOS</h3>
         
       </div>
-      <div id="softwares_grid">
+      <div class="softwares_grid">
         {% if projetos_finalizados %}
 
         {% for projeto in projetos_finalizados %}
@@ -99,11 +99,11 @@
         {% endif %}
       </div>
       <!-- SOFTWARES EM ANDAMENTO-->
-      <div id="softwares_content">
+      <div class="softwares_content " id="software-andamento">
         <h3 class="section_subheader">EM ANDAMENTO</h3>
         
       </div>
-      <div id="softwares_grid">
+      <div class="softwares_grid">
         {% if projetos_em_andamento %}
 
         {% for projeto in projetos_em_andamento %}
@@ -174,10 +174,10 @@
         {% endif %}
       </div>
         <!-- PROJETOS NÃO FINALIZADOS-->
-        <div id="softwares_content">
+        <div class="softwares_content" id="software-nao-finalizados">
             <h3 class="section_subheader">NÃO FINALIZADOS</h3>
           </div>
-          <div id="softwares_grid">
+          <div class="softwares_grid">
             {% if projetos_nao_finalizados %}
 
             {% for projeto in projetos_nao_finalizados %}

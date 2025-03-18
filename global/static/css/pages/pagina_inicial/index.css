@@ -383,7 +383,7 @@ nav.sticky {
 }
 
 #sobre_content p,
-#softwares_content p,
+.softwares_content p,
 #acontecimentos_content p,
 #processos_content p {
   padding-block: 2rem 2rem;
@@ -392,7 +392,7 @@ nav.sticky {
 }
 
 #sobre_grid,
-#softwares_grid,
+.softwares_grid,
 #processos_grid {
   display: grid;
   gap: 1rem;
@@ -439,7 +439,6 @@ nav.sticky {
   border-radius: 1rem;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.05);
   transition: 0.3s;
-  cursor: pointer !important;
 }
 .softwares_card:hover {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
@@ -647,7 +646,7 @@ footer {
 
 @media (min-width: 500px) {
   #sobre_grid,
-  #softwares_grid,
+  .softwares_grid,
   #processos_grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -672,7 +671,7 @@ footer {
   .footer_container {
     grid-template-columns: repeat(3, 1fr);
   }
-  #softwares_grid {
+  .softwares_grid {
     grid-template-columns: repeat(3, 1fr);
   }
   #acontecimentos_timeline::after {
@@ -721,7 +720,7 @@ footer {
   #sobre_grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  #softwares_grid {
+  .softwares_grid {
     grid-template-columns: repeat(4, 1fr);
   }
   #processos_grid {
