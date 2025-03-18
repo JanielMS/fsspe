@@ -6,6 +6,8 @@ class Acontecimento(models.Model):
     data = models.DateField()
     descricao = models.TextField(null=True, blank=True)
     imagem = models.ImageField(upload_to="acontecimentos/", blank=True, null=True)
+    data_cadastro = models.DateTimeField(auto_now_add=True)
+    
 
     def __str__(self):
         return self.titulo

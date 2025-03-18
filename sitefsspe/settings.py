@@ -62,7 +62,7 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 HANDLER403 = 'sitefsspe.views.custom_403'
 
-LOGIN_REDIRECT_URL = '/sgpa/home'
+LOGIN_REDIRECT_URL = '/sgpa/dashboard'
 LOGOUT_REDIRECT_URL = "/login/"
 
 TEMPLATES = [

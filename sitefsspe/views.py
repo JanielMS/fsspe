@@ -1,10 +1,28 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import TemplateView
 from django.shortcuts import render
+from projetos.models import Projeto
+from acontecimentos.models import Acontecimento
+from django.contrib.auth.models import User
 
+def dashboard(request):
+    # Get the counts of various objects
+    total_projects = Projeto.objects.count()
+    total_acontecimentos = Acontecimento.objects.count()
+    total_users = User.objects.count()
 
-class HomeView(LoginRequiredMixin, TemplateView):
-    template_name  = 'home.html'
+    # Get recent movements
+    recent_movements = list(Projeto.objects.all()) + list(Acontecimento.objects.all())
+    recent_movements.sort(key=lambda x: x.data_cadastro, reverse=True)
+    recent_movements = recent_movements[:5]
+    # Add the created_at attribute in the projects and events
+
+    # Pass the counts and recent movements to the template
+    context = {
+        'total_projects': total_projects,
+        'total_acontecimentos': total_acontecimentos,
+        'total_users': total_users,
+        'recent_movements': recent_movements,
+    }
+    return render(request, 'dashboard.html', context)
 
 def custom_403(request, exception):
     """

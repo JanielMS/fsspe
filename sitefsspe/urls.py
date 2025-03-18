@@ -24,7 +24,7 @@ from .views import *
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("pagina_inicial.urls")),
-    path("sgpa/home", HomeView.as_view(), name="home"),
+    path("sgpa/dashboard", dashboard, name="dashboard"),
     path("sgpa/", include("usuarios.urls")),
     path("sgpa/projetos/", include("projetos.urls")),
     path("sgpa/acontecimentos/", include("acontecimentos.urls")),

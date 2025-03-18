@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/icons/remixicon.css' %}">
 
-    <title>{% block PageTitle %}{% endblock PageTitle %} - SIGPAT</title>
+    <title>{% block PageTitle %}{% endblock PageTitle %} - SGPA</title>
 </head>
 <body>
     <div class="d-flex">
@@ -33,7 +33,7 @@
             <!-- Menu Lista -->
             <nav class="menu">
                 <div>
-                    <a href="{% url 'home'%}" class="menu-item {% if request.path == '/' %}active{% endif %}" title="Inicio">
+                    <a href="{% url 'dashboard'%}" class="menu-item {% if request.path == '/dashboard' %}active{% endif %}" title="Inicio">
                         <span class="icon"><i class="ri-home-5-line"></i></span>
                         <span class="text">Inicio</span>
                     </a>
@@ -58,11 +58,7 @@
                         <span class="icon"><i class="ri-user-line"></i></span>
                         <span class="text">Perfil</span>
                     </a>
-                    
-                    {% comment %} <a href="{% url 'listar-transacoes'%}" class="menu-item {% if request.path == '/transacoes/' %}active{% endif %}">
-                        <span class="icon"><i class="ri-list-indefinite"></i></span>
-                        <span class="text">Transações</span>
-                    </a> {% endcomment %}                    
+                                        
 
                 </div>
 
