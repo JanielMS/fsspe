@@ -15,10 +15,10 @@
             {% for projeto in projetos %}
                 <tr>
                     <td>{{ projeto.nome_abreviado }}</td>
-                    <td>{{ projeto.data_inicio }}</td>
+                    <td>{{ projeto.data_inicio|date:'M/Y' }}</td>
                     <td>{{ projeto.cliente }}</td>
                     <td>
-                        <span  class="d-block {% if projeto.status_projeto == 'finalizado' %}status-finalizado{% elif projeto.status_projeto == 'em_andamento' %}status-em-andamento{% elif projeto.status_projeto == 'nao_finalizado' %}status-nao-finalizado{% elif projeto.status_projeto == 'implementado' %}status-implementado{% endif %}">{{ projeto.get_status_projeto_display }}</span>
+                        <span  class="d-block project-status status_{{ projeto.status_projeto|lower }}">{{ projeto.get_status_projeto_display }}</span>
                     </td>
                     <td>
                         <div class="actions">

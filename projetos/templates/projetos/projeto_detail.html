@@ -20,6 +20,13 @@
 
     <div class="project-info">
         <div class="project-row">
+            <strong>Link do Projeto:</strong> {% if projeto.link_do_projeto %}
+                <a href="{{projeto.link_do_projeto}}" target="_blank">{{ projeto.link_do_projeto }}</a>
+            {% else %}
+                Link Indisponível 
+            {% endif %}
+        </div>
+        <div class="project-row">
             <strong>Cliente:</strong> {{ projeto.cliente }}
         </div>
         <div class="project-row">

@@ -1,0 +1,31 @@
+/* Estilos para cada tipo de status */
+.project-status {
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+.status_finalizado {
+    background-color: #28a745;
+    color: white;
+}
+
+.status_em_andamento {
+    background-color: #ffc107;
+    color: black;
+}
+
+.status_nao_finalizado {
+    background-color: #dc3545;
+    color: white;
+}
+
+.status_implantado {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.status_registro_concluido{
+    background-color: #b86d17;
+    color: white;
+}

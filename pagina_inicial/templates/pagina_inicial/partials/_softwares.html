@@ -7,29 +7,71 @@
         
       </div>
       <div id="softwares_grid">
-        <div class="softwares_card">
-          <span class="software_img"><img src="{% static 'assets/imgs/cropped-em_breve.png'%}" alt=""></span>
-          <h4>Renove</h4>
-          <p>
-            SCPP
-          </p>
-        </div>
-        <div class="softwares_card">
-          <span class="software_img"><img src="{% static 'assets/imgs/cropped-em_breve.png'%}" alt=""></span>
-          <h4>SW Vale</h4>
-          <p>
-            SCE
-          </p>
-        </div>
-        <div class="softwares_card">
-          <span class="software_img"><img src="{% static 'assets/imgs/cropped-em_breve.png'%}" alt=""></span>
-          <h4>14 Biss</h4>
-          <p>
-            SIGAC
-          </p>
-        </div>
+        {% for projeto in projetos_finalizados %}
+          <div class="softwares_card" data-bs-toggle="modal" data-bs-target="#modalProjeto{{ projeto.id }}">
+            {% if projeto.imagem %}
+              <span class="software_img"><img src="{{ projeto.imagem.url }}" alt="{{ projeto.nome_abreviado }}"></span>
+            {% else %}
+              <span class="software_img"><img src="{% static 'assets/imgs/cropped-em_breve.png'%}" alt=""></span>
+            {% endif %}
+            <h4>{{projeto.nome_da_equipe}}</h4>
+            <p>
+              {{projeto.nome_abreviado}}
+            </p>
+          </div>
+            <!-- Modal do Projeto -->
+            <div class="modal fade" id="modalProjeto{{ projeto.id }}" tabindex="-1" aria-labelledby="modalProjetoLabel{{ projeto.id }}" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h3 class="modal-title" id="modalProjetoLabel{{ projeto.id }}">{{ projeto.nome }}</h3>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                      </div>
+                      <div class="modal-body">
+                      <div class="projeto-imagem">
+                          {% if projeto.imagem %}
+                          <span><img src="{{ projeto.imagem.url }}" alt="{{ projeto.nome }}"></span>
+                          {% else %}
+                              <p>Sem imagem para este projeto.</p>
+                          {% endif %}
+                      </div>
+                      <p>
+                        <span class="project-status status_{{ projeto.status_projeto|lower }}">{{ projeto.get_status_projeto_display }}</span>
+                        <span class="project-status status_{{ projeto.status_implantacao|lower }}">{{ projeto.get_status_implantacao_display }}</span>
+                        <span class="project-status status_{{ projeto.status_registro|lower }}">{{ projeto.get_status_registro_display }}</span>
+                      </p>
+                      <div class="projetc-info">
+                          <p>
+                              <strong>Link do Projeto:</strong> {% if projeto.link_do_projeto %}
+                                  <a href="{{projeto.link_do_projeto}}" target="_blank">{{ projeto.link_do_projeto }}</a>
+                              {% else %}
+                                  Link Indisponível 
+                              {% endif %}
+                          </p>
+                          <p>
+                              <strong>Cliente:</strong> {{ projeto.cliente }}
+                          </p>
+                          <p>
+                              <strong>Data de Início:</strong> {{ projeto.data_inicio }}
+                          </p>
+                          <p>
+                              <strong>Equipe:</strong> {{ projeto.equipe }}
+                          </p>
+                          <p>
+                              <strong>Descrição:</strong>
+                              <p>{{ projeto.descricao }}</p>
+                          </p>
+                      </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        {% endfor %} 
       </div>
       <div class="mt-5 ">
-        <p>Para ver projetos em andamento: <a href="#" class="text-success">Clique Aqui!</a> </p>
+        <p>Para ver projetos todos os projetos, incluido os projetos em andamento: <a href="{% url 'softwares'%}" class="text-success">Clique Aqui!</a> </p>
       </div>
 </section>

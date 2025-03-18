@@ -30,7 +30,9 @@ class Projeto(models.Model):
     data_inicio = models.DateField(blank=True, null=True)
     equipe = models.TextField(blank=True, null=True)
     nome_da_equipe = models.CharField(max_length=100, blank=True, null=True)
+    link_do_projeto = models.URLField(blank=True, null=True)
     cliente = models.CharField(max_length=100)
+    data_cadastro = models.DateTimeField(auto_now_add=True)
 
     # Campos de status
     status_projeto = models.CharField(

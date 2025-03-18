@@ -52,7 +52,8 @@
   font-size: 1rem;
   line-height: 1.5;
   display: grid;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 .form-body input, .form-body textarea, .form-body select {
   background-color: transparent;
@@ -81,8 +82,12 @@
   color: #515252;
   opacity: 0.6;
 }
-.form-body textarea {
+.form-body div:has(textarea) {
+  grid-column: span 2 !important;
+}
+.form-body div:has(textarea) textarea {
   height: 190px;
+  min-height: 150px;
 }
 .form-body p {
   text-align: left;
@@ -95,39 +100,23 @@
   margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
-.form-body form .helptext {
+.form-body .helptext {
   font-size: 12px;
   color: var(--text-light);
   display: block;
   margin-top: 5px;
 }
-.form-body form ul {
+.form-body ul {
   padding-left: 18px;
   margin: 5px 0 0;
   list-style: square;
   text-align: left;
 }
-.form-body form ul li {
+.form-body ul li {
   font-size: 14px;
   color: var(--text-light);
 }
-.form-body form button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 1.5rem;
-  background: #6dde34;
-  color: #ffffff;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s;
-  font-weight: 600;
-}
-.form-body form button:hover {
-  background: rgb(85.0423728814, 191.8177966102, 31.1822033898);
-}
-.form-body form ul.errorlist {
+.form-body ul.errorlist {
   background: var(--error-bg);
   color: var(--error-color);
   border: 1px solid var(--error-color);
@@ -232,6 +221,39 @@ table tbody tr:hover td .actions {
   background-color: #d0d0d0;
   padding: 0.25rem;
   border-radius: 8px;
+}
+
+/* Estilos para cada tipo de status */
+.project-status {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+
+.status_finalizado {
+  background-color: #28a745;
+  color: white;
+}
+
+.status_em_andamento {
+  background-color: #ffc107;
+  color: black;
+}
+
+.status_nao_finalizado {
+  background-color: #dc3545;
+  color: white;
+}
+
+.status_implantado {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.status_registro_concluido {
+  background-color: #b86d17;
+  color: white;
 }
 
 body {
@@ -405,9 +427,8 @@ select:hover {
   margin-bottom: 2rem;
 }
 .project-detail-container .projeto-imagem span img {
-  width: 100%;
   max-height: 300px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .project-header {
@@ -417,33 +438,6 @@ select:hover {
   border-bottom: 2px solid #f1f1f1;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-}
-
-.project-status {
-  padding: 0.5rem 1rem;
-  font-weight: bold;
-  border-radius: 5px;
-  text-transform: capitalize;
-}
-
-.status_finalizado {
-  background-color: #28a745;
-  color: white;
-}
-
-.status_em_andamento {
-  background-color: #ffc107;
-  color: black;
-}
-
-.status_nao_finalizado {
-  background-color: #dc3545;
-  color: white;
-}
-
-.status_implantado {
-  background-color: #17a2b8;
-  color: white;
 }
 
 .project-info {
@@ -460,35 +454,6 @@ select:hover {
   display: flex;
   gap: 1rem;
   justify-content: flex-start;
-}
-
-/* Estilos para cada tipo de status */
-.status-finalizado {
-  background-color: #28a745; /* Verde */
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-.status-em-andamento {
-  background-color: #ffc107; /* Amarelo */
-  color: black;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-.status-nao-finalizado {
-  background-color: #dc3545; /* Vermelho */
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-.status-implementado {
-  background-color: #17a2b8; /* Azul */
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
 }
 
 @media (max-width: 768px) {

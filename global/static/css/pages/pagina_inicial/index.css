@@ -1,4 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Estilos para cada tipo de status */
+.project-status {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+
+.status_finalizado {
+  background-color: #28a745;
+  color: white;
+}
+
+.status_em_andamento {
+  background-color: #ffc107;
+  color: black;
+}
+
+.status_nao_finalizado {
+  background-color: #dc3545;
+  color: white;
+}
+
+.status_implantado {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.status_registro_concluido {
+  background-color: #b86d17;
+  color: white;
+}
+
 .section_container {
   max-width: 1200px;
   margin: auto;
@@ -406,6 +439,7 @@ nav.sticky {
   border-radius: 1rem;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.05);
   transition: 0.3s;
+  cursor: pointer !important;
 }
 .softwares_card:hover {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);

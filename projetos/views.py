@@ -9,7 +9,7 @@ class ProjetoListView(LoginRequiredMixin, ListView):
     template_name = "projetos/projeto_list.html"
     context_object_name = "projetos"
     paginate_by = 15
-    ordering = ['nome'] 
+    ordering = ['-data_cadastro'] 
 
 class ProjetoDetailView(LoginRequiredMixin, DetailView):
     model = Projeto
