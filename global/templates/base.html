@@ -25,8 +25,7 @@
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownNovo">
                     <li><a class="dropdown-item" href="{% url 'projetos:criar-projeto'%}">Projeto</a></li>
-                    <li><a class="dropdown-item" href="{% url 'acontecimentos:criar-acontecimento'%}">Aconteciemento</a></li>
-                    {% comment %} <li><a class="dropdown-item " href="#"><i class="ri-arrow-right-up-long-line"></i> Acontecimentos</a></li> {% endcomment %}
+                    <li><a class="dropdown-item" href="{% url 'acontecimentos:criar-acontecimento'%}">Acontecimento</a></li>
                     <!-- Adicione mais itens conforme necessário -->
                 </ul>
             </div>
@@ -35,7 +34,7 @@
                 <div>
                     <a href="{% url 'dashboard'%}" class="menu-item {% if request.path == '/dashboard' %}active{% endif %}" title="Inicio">
                         <span class="icon"><i class="ri-home-5-line"></i></span>
-                        <span class="text">Inicio</span>
+                        <span class="text">Início</span>
                     </a>
 
                     <a href="{% url 'projetos:lista-projetos'%}" class="menu-item {% if request.path == '/sgpa/projetos/' %}active{% endif %}" title="Projetos">
