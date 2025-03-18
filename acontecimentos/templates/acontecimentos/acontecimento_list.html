@@ -1,0 +1,49 @@
+{% extends "./base_app.html" %}
+{% block AppContent %}
+    {% if acontecimentos %}
+    <table class="table table-responsive table-hover">
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Data</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for acontecimento in acontecimentos %}
+                <tr>
+                    <td>{{ acontecimento.titulo }}</td>
+                    <td>{{ acontecimento.data|date:'M. Y' }}</td>
+                    <td>
+                        <div class="actions">
+                            <a href="{% url 'acontecimentos:ver-acontecimento' acontecimento.pk %}" class="btn btn-warning">Ver</a>
+                            <a href="{% url 'acontecimentos:editar-acontecimento' acontecimento.pk %}" class="btn btn-success"> Editar</a>
+                            <a href="{% url 'acontecimentos:excluir-acontecimento' acontecimento.pk %}" class="btn btn-danger"> Excluir</a>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>Nenhum acontecimento Cadastrado!</p>
+    {% endif %}
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if acontecimentos.has_previous %}
+                    <a href="?page=1">&laquo; primeira</a>
+                    <a href="?page={{ acontecimentos.previous_page_number }}">anterior</a>
+                {% endif %}
+                <span class="current">
+                    Página {{ acontecimentos.number }} de {{ acontecimentos.paginator.num_pages }}.
+                </span>
+                {% if acontecimentos.has_next %}
+                    <a href="?page={{ acontecimentos.next_page_number }}">próxima</a>
+                    <a href="?page={{ acontecimentos.paginator.num_pages }}">última &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+{% endblock %}
+

@@ -37,9 +37,13 @@
                         <span class="text">Inicio</span>
                     </a>
 
-                    <a href="{% url 'projetos:lista-projetos'%}" class="menu-item {% if request.path == '/sgpa/projetos/' %}active{% endif %}" title="Perfil">
+                    <a href="{% url 'projetos:lista-projetos'%}" class="menu-item {% if request.path == '/sgpa/projetos/' %}active{% endif %}" title="Projetos">
                         <span class="icon"><i class="ri-box-3-line"></i></span>
                         <span class="text">Projetos</span>
+                    </a>
+                    <a href="{% url 'acontecimentos:lista-acontecimentos'%}" class="menu-item {% if request.path == '/sgpa/acontecimentos/' %}active{% endif %}" title="Aconteciementos">
+                        <span class="icon"><i class="ri-timeline-view"></i></span>
+                        <span class="text">Aconteciementos</span>
                     </a>
 
                     {% if request.user.groups.all.0.name == "Admin" %}

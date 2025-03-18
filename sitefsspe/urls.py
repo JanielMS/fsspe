@@ -27,6 +27,7 @@ urlpatterns = [
     path("sgpa/home", HomeView.as_view(), name="home"),
     path("sgpa/", include("usuarios.urls")),
     path("sgpa/projetos/", include("projetos.urls")),
+    path("sgpa/acontecimentos/", include("acontecimentos.urls")),
 ]
 
 

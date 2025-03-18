@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block PageTitle %}
+Acontecimentos
+{% endblock %}
+
+{% block content %}
+<div class="p-5">
+    <div class="actions-header d-flex align-items-center justify-content-between">
+        <div>
+            <h2>Acontecimentos</h2>
+        </div>
+        <div class="actions">
+            <a href="{% url 'acontecimentos:criar-acontecimento' %}" class="btn btn-secondary"><i class="ri-add-line"></i> Novo Acontecimento</a>
+        </div>
+    </div>
+    <div class="mt-5">
+        {% block AppContent %}
+    
+        {% endblock AppContent %}
+    </div>
+</div>
+
+{% endblock content %}

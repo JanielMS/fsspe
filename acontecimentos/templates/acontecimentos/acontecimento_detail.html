@@ -1,0 +1,32 @@
+{% extends "./base_app.html" %}
+
+{% block AppContent %}
+<div class="details-detail-container">
+    <div class="details-header">
+        <h1 class="details-title">{{ acontecimento.titulo }}</h1>
+    </div>
+    <div class="acontecimento-imagem">
+        {% if acontecimento.imagem %}
+        <span><img src="{{ acontecimento.imagem.url }}" alt="{{ acontecimento.titulo }}"></span>
+        {% else %}
+            <p>Sem imagem para este acontecimento.</p>
+        {% endif %}
+    </div>
+
+    <div class="details-info">
+        <div class="details-row">
+            <strong>Data:</strong> {{ acontecimento.data|date:'d M Y' }}
+        </div>
+        <div class="details-row">
+            <strong>Descrição:</strong>
+            <p>{{ acontecimento.descricao }}</p>
+        </div>
+    </div>
+
+    <div class="details-actions">
+        <a href="{% url 'acontecimentos:editar-acontecimento' acontecimento.id %}" class="btn btn-success">Editar</a>
+        <a href="{% url 'acontecimentos:excluir-acontecimento' acontecimento.id %}" class="btn btn-danger">Deletar</a>
+        <a href="{% url 'acontecimentos:lista-acontecimentos' %}" class="btn btn-secondary">Voltar</a>
+    </div>
+</div>
+{% endblock AppContent %}

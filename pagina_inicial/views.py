@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from projetos.models import Projeto
+from acontecimentos.models import Acontecimento
 
 
 class PaginaInicialView(TemplateView):
@@ -11,6 +12,9 @@ class PaginaInicialView(TemplateView):
         # Buscando os projetos que estão com status finalizado
         projetos_finalizados = Projeto.objects.filter(status_projeto='finalizado')[:10]
         context['projetos_finalizados'] = projetos_finalizados
+        # Buscando todos os acontecimentos
+        acontecimentos = Acontecimento.objects.all()[:7]
+        context['acontecimentos'] = acontecimentos
         return context
 
 class SoftwaresView(TemplateView):

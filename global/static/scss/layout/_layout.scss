@@ -187,7 +187,7 @@ select {
 }
 
 
-.project-detail-container {
+.details-detail-container {
     padding: 2rem;
 
     .projeto-imagem{
@@ -203,7 +203,7 @@ select {
     }
 }
 
-.project-header {
+.details-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -217,18 +217,18 @@ select {
 
 
 
-.project-info {
+.details-info {
     margin-bottom: 2rem;
 }
 
-.project-row {
+.details-row {
     font-size: 1rem;
     margin-bottom: 0.8rem;
     color: #555;
 }
 
 
-.project-actions {
+.details-actions {
     display: flex;
     gap: 1rem;
     justify-content: flex-start;
@@ -237,20 +237,20 @@ select {
 
 
 @media (max-width: 768px) {
-    .project-detail-container {
+    .details-detail-container {
         padding: 1rem;
     }
 
-    .project-header {
+    .details-header {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .project-status {
+    .details-status {
         margin-top: 0.5rem;
     }
 
-    .project-actions {
+    .details-actions {
         flex-direction: column;
         gap: 0.5rem;
     }

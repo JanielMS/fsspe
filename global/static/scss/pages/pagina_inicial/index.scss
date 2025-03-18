@@ -471,6 +471,7 @@ nav {
         color: $primary-color;
         transition: 0.3s;
         box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.039);
+        
 
     }
 
@@ -505,13 +506,14 @@ nav {
         content: '';
         position: absolute;
         width: 2px;
-        height: 100vh;
+        height: 100%;
         background-color: $text-light;
         top: 0;
         left: 37px;
         margin-left: -3px;
         z-index: 0;
     }
+    
     .acontecimentos_card{
         padding-left: 4.6rem;
         position: relative;
@@ -555,6 +557,8 @@ nav {
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
+                
+
             }
         }
 
@@ -596,6 +600,15 @@ nav {
     
 }
 
+.acontecimentos_card.timeline_fim{
+    width: fit-content;
+    margin: -3rem 0;
+        .text_box{
+            border: 4px solid $secondary-color;
+            padding: 0.5rem 1rem;
+
+        }
+}
 footer {
     background-color: $text-dark;
 }
@@ -733,6 +746,10 @@ footer {
       .acontecimentos_card{
         width: 50%;
 
+        span, img{
+            width: 100px;
+            height: 100px;
+        }
         &:nth-child(even) {
             left: 50%;    
             .text_box::after {
@@ -740,7 +757,7 @@ footer {
 
             }
             span{
-                left: -37px;
+                left: -50px;
             }
         }
         &:nth-child(odd) {
@@ -755,13 +772,14 @@ footer {
             }
 
             span{
-                right: -37px;
+                right: -50px;
                 left: inherit;
             }
         }
       }
-
-      
+    }
+    .acontecimentos_card.timeline_fim{
+        margin: -3rem auto;
     }
 }
 

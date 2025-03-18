@@ -7,57 +7,28 @@
         
       </div>
       <div id="acontecimentos_timeline">
-        <div class="acontecimentos_card">
-          <span class="software_img"><img src="{% static 'assets/imgs/cropped-em_breve.png'%}" alt=""></span>
-          <div class="text_box">
-              <small>NOVEMBRO DE 2011</small>
-              <h4>Criação da Fábrica de Sofware </h4>
-              <p>
-                Com o intuito de criar um espaço para aprender e ensinar combase em problemas reais, é criada a Fábrica de Software com a supervisão da Professora Jussara Moreira - IF Sertão PE.
-              </p>
+        {% for acontecimento in acontecimentos %}
+          <div class="acontecimentos_card">
+            {% if acontecimento.imagem %}
+              <span class="software_img"><img src="{{acontecimento.imagem.url}}" alt="{{acontecimento.titulo}}" class="rounded-circle"></span>
+            {% else %}
+              <span class="software_img"><img src="{% static 'assets/imgs/cropped-em_breve.png'%}" alt=""></span>
+            {% endif %}
+            <div class="text_box">
+                <small>{{acontecimento.data|date:'F Y'}}</small>
+                <h4>{{acontecimento.titulo}}</h4>
+                <p>
+                  {{acontecimento.descricao}}
+                </p>
+            </div>
           </div>
-        </div>
+        {% endfor %}
         
-        <div class="acontecimentos_card">
-          <span class="software_img"><img src="{% static 'assets/imgs/cropped-em_breve.png'%}" alt=""></span>
-          <div class="text_box">
-              <small>Dezembro de 2011</small>
-              <h4>Projeto aprovado pelo CNPQ </h4>
-              <p>
-                É com muita satisfação que o projeto foi aprovado em 2011 com bolsa CNPQ para a aluna Emanuella Bezerra Santos.
-              </p>
-          </div>
-        </div>
-        <div class="acontecimentos_card">
-          <span class="software_img"><img src="{% static 'assets/imgs/cropped-em_breve.png'%}" alt=""></span>
-          <div class="text_box">
-              <small>Dezembro de 2011</small>
-              <h4>Projeto aprovado pelo CNPQ </h4>
-              <p>
-                É com muita satisfação que o projeto foi aprovado em 2011 com bolsa CNPQ para a aluna Emanuella Bezerra Santos.
-              </p>
-          </div>
-        </div>
         
-        <div class="acontecimentos_card">
-          <span class="software_img"><img src="{% static 'assets/imgs/cropped-em_breve.png'%}" alt=""></span>
-          <div class="text_box">
-              <small>Dezembro de 2016</small>
-              <h4>Visita técnica no CESAR e na Pitang </h4>
-              <p>
-                    Os alunos das disciplinas Engenharia de Software e Projeto visitam o CESAR e a PITANG em umavisita técnica.
-              </p>
-          </div>
-        </div class="text-box">
-        <div class="acontecimentos_card">
-          <span class="software_img"><img src="{% static 'assets/imgs/cropped-em_breve.png'%}" alt=""></span>
-          <div class='text_box'>
-              <small>Dezembro de 2016</small>
-              <h4>Visita técnica no CESAR e na Pitang </h4>
-              <p>
-                    Os alunos das disciplinas Engenharia de Software e Projeto visitam o CESAR e a PITANG em umavisita técnica.
-              </p>
-          </div>
+      </div>
+      <div class="acontecimentos_card timeline_fim">
+        <div class='text_box'>
+          <h4>Venha Fazer Parte da Nossa História</h4>
         </div>
       </div>
 </section>

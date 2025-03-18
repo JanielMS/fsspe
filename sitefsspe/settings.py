@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     "pagina_inicial",
     "usuarios",
     "projetos",
-    
+    "acontecimentos",
 ]
 
 MIDDLEWARE = [

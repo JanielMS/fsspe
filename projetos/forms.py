@@ -10,7 +10,7 @@ class ProjetoForm(forms.ModelForm):
         ]
 
         widgets = {
-            'data_inicio': forms.DateInput(attrs={'type': 'date'}),
+            'data_inicio': forms.DateInput(format='%Y-%m-%d', attrs={'type': 'date'}),
         }
 
 
